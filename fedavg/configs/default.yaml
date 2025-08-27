@@ -1,0 +1,18 @@
+dataset: cifar10            # [mnist|cifar10|cifar100]
+n_clients: 10
+participation: 1.0          # fracción C en (0,1]
+partition: non_iid_dirichlet  # [iid|non_iid_dirichlet|non_iid_quantity]
+alpha: 0.3                  # para dirichlet
+skew: 0.7                   # para quantity
+local_epochs: 1             # E
+batch_size: 128             # B
+lr: 0.05                    # η
+weight_decay: 5e-4
+max_rounds: 50
+target_test_acc: null
+max_energy_wh: null
+seed: 1337
+num_workers: 4
+amp: false
+device: auto                # [auto|cuda|cpu|mps]
+save_dir: results

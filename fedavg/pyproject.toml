@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fedavg"
+version = "0.1.0"
+description = "FedAvg clásico standalone (MNIST/CIFAR10/CIFAR100) con CodeCarbon y criterios de parada."
+requires-python = ">=3.11"
+authors = [{name = "Tu Nombre"}]
+dependencies = [
+  "torch>=2.1.0",
+  "torchvision>=0.16.0",
+  "numpy>=1.25",
+  "pandas>=2.0",
+  "scikit-learn>=1.3",
+  "tqdm>=4.66",
+  "pyyaml>=6.0",
+  "codecarbon>=2.3.5"
+]
+optional-dependencies.tests = ["pytest>=7.4"]
+
+[project.scripts]
+fedavg-cli = "fedavg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
